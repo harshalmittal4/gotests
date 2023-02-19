@@ -36,7 +36,3 @@ $ go clean -modcache
 
 - GOROOT is for compiler/tools that comes from go installation
 - GOPATH is for your own go projects / 3rd party libraries (downloaded with "go get"). If the environment variable is unset, GOPATH defaults to a subdirectory named "~/go". It is used to resolve import statements when not using go.mod. It is used to store downloaded source code in GOPATH/pkg and compiled commands in GOPATH/bin.
-
-- cmd ], cmd [ - go forward/ go back cursor
-- ctrl tab - switch betw recent tabs
-- 

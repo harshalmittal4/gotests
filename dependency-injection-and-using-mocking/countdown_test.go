@@ -56,12 +56,20 @@ Go!`
 }
 
 func TestConfigurableSleepDurationFunctionality(t *testing.T) {
+	// Mocking: to mock an object's method without calling the actual method,
+	// create a class that wraps the object's class -
+	// type fakeErrorImage struct {
+	// 	   imgutil.Image  // orignal object class
+	// }
+	// and implement the method you want to mock for the wrapper class with desired behavior.
+	// Then instead passing the object, create and pass the wrapper aroud that object and call the mock method where needed.
 	sleepTime := 5 * time.Second
 
 	spyTime := &SpyTime{}
 	// create sleeper to pass in CountDown using a spy sleep method, to test the sleep duration functionality
 	// we can use &SpyTime as the only thing we need is Sleep func to create DefaultSleeper and call .Sleep() with it
 	// and &SpyTime{} has that
+	// using dependency injection here
 	sleeper := DefaultSleeper{sleepTime, spyTime.Sleep}
 
 	// call actual Sleep method which must invoke spyTime.Sleep(sleepTime) with sleepTime.
