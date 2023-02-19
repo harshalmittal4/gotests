@@ -5,7 +5,7 @@
 - A package's import path is its module path joined with its subdirectory within the module.
 
 go install learn/testing/gotests/go-basics
-- This command builds the go files in <learn/testing/gotests/go-basics> package, producing an executable binary. It then installs that binary as $HOME/go/bin/hello
+- This command builds the go files in <learn/testing/gotests/go-basics> package, producing an executable binary. It then installs that binary as $HOME/go/bin/go-basics
 
 - For convenience, go commands accept paths relative to the working directory, and default to the package in the current working directory if no other path is given. So in root directory (learn/testing/gotests), the following commands are all equivalent:
 
@@ -15,9 +15,10 @@ $ go install ./go-basics
 or same as the following command in learn/testing/gotests/go-basics directory
 $ go install
 
-- The go build command compiles the packages, along with their dependencies, but it doesn't install the results. Instead it saves the compiled package in the local build cache. If we want our program to run again, we don’t have to compile the program again, we simply run the executable file.
-The go install command compiles and installs the packages, along with their dependencies. 
-Basically you can use go build as a check that the packages can be built (along with their dependencies) while go install also (permanently) installs the results in the proper folder ($GOPATH/pkg).
+- go build 
+compiles the packages, along with their dependencies, but it doesn't install the results. Instead it saves the compiled package in the local build cache. If we want our program to run again, we don’t have to compile the program again, we simply run the executable file.
+
+- The go install command compiles and installs the packages, along with their dependencies. Basically you can use go build as a check that the packages can be built (along with their dependencies) while go install also (permanently) installs the results in the proper folder ($GOPATH/pkg).
 
 - go build -o DirectoryPath
 parameter -o followed by go build allows to output binary to a specified location
@@ -32,6 +33,9 @@ command adds missing module requirements for imported packages and removes requi
 
 - The downloaded contents for a given version of a module are shared among all other modules that require that version, so the go command marks those files and directories as read-only. To remove all downloaded modules, you can pass the -modcache flag to go clean:
 $ go clean -modcache
+
+- GOROOT is for compiler/tools that comes from go installation
+- GOPATH is for your own go projects / 3rd party libraries (downloaded with "go get"). If the environment variable is unset, GOPATH defaults to a subdirectory named "~/go". It is used to resolve import statements when not using go.mod. It is used to store downloaded source code in GOPATH/pkg and compiled commands in GOPATH/bin.
 
 - cmd ], cmd [ - go forward/ go back cursor
 - ctrl tab - switch betw recent tabs
