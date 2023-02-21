@@ -36,3 +36,6 @@ $ go clean -modcache
 
 - GOROOT is for compiler/tools that comes from go installation
 - GOPATH is for your own go projects / 3rd party libraries (downloaded with "go get"). If the environment variable is unset, GOPATH defaults to a subdirectory named "~/go". It is used to resolve import statements when not using go.mod. It is used to store downloaded source code in GOPATH/pkg and compiled commands in GOPATH/bin.
+
+- Package name - The package main tells the Go compiler that the package should compile as an executable program instead of a shared library. 
+The main function in the main package is the entry point of the program. File name (hello.go here) could be anything but a main package with a func main() is required for executables.
