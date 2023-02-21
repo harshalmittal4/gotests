@@ -12,7 +12,7 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-vscode/
+.vscode/
 
 # Go workspace file
 go.work
