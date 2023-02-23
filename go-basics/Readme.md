@@ -22,16 +22,17 @@ or same as the following command in learn/testing/gotests/go-basics directory
 $ go install
 
 - go build
-compiles the packages, along with their dependencies, but it doesn't install the results. Instead it saves the compiled package in the local build cache. If we want our program to run again, we don’t have to compile the program again, we simply run the executable file.
+compiles the packages, along with their dependencies, but it doesn't install the results. Instead it saves the compiled package in the local build cache.
+Use the go build to build the binary so that you can share and distribute it, - it will also build all of the supporting code needed to be able to execute the binary on any computer with the same system architecture, regardless of whether that system has the .go source files, or even a Go installation.
+Once binary has being build (by default it's named named after the directory in which you built your program), we don't have to compile the program again, can run the program without go run command by just executing the binary - ./go-basics
 
 - The go install command compiles and installs the packages, along with their dependencies. Basically you can use go build as a check that the packages can be built (along with their dependencies) while go install also (permanently) installs the results in the proper folder ($GOPATH/pkg).
 
 - go build -o DirectoryPath
-parameter -o followed by go build allows to output binary to a specified location
+parameter -o followed by go build allows to output binary to a specified location - go build -o ../bin/
 
 - go run <name of the Go program>
-combines both the compilation and execution of code. This allows to quickly check the output of updated code.
-Unlike go build, go run will NOT create an executable file in our current folder.
+to automatically compile your source code and run the resulting executable.
 
 - we can also sun the program by just typing the binary executable name for this package, i.e. use commannd go-basics to run hello.go
 - go mod tidy
