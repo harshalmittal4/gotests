@@ -1,6 +1,7 @@
 # Go basic commands
 
-- Create a module using go mod init <module-name - location on the internet where you'll go to download that module>. Modules are the unit of distribution and versioning of software
+- Create a module using go mod init <module-name - location on the internet where you'll go to download that module>.
+Modules are the unit of distribution and versioning of software
 
 - Go programs are organized into packages. A package is a collection of source files in the same directory that are compiled together. Functions, types, variables, and constants defined in one source file are visible to all other source files within the same package.
 
