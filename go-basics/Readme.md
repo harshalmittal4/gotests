@@ -31,8 +31,9 @@ Once binary has being build (by default it's named named after the directory in 
 - go build -o DirectoryPath
 parameter -o followed by go build allows to output binary to a specified location - go build -o ../bin/
 
-- go run <name of the Go program>
-to automatically compile your source code and run the resulting executable.
+- go run <file name> <file name>
+// go run main.go config.go server.go
+Go run takes a file or files and automatically complies those and only those files source code and run the resulting executable.
 
 - we can also sun the program by just typing the binary executable name for this package, i.e. use commannd go-basics to run hello.go
 - go mod tidy
